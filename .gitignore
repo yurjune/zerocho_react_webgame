@@ -1,2 +1,4 @@
 /practice
-.gitignore
+2_wordrelay/npm.txt
+node_modules/
+dist/

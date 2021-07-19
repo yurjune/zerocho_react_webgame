@@ -44,8 +44,9 @@
           this.setState({ value: e.target.value });
         };
 
+        input;
         onRefInput = (ref) => {
-          this.input = ref;
+          this.input = ref; // this.input은 input의 DOM에 접근하는 것
         }
 
         render() {

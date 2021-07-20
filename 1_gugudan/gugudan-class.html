@@ -25,10 +25,10 @@
           if (parseInt(this.state.value) === this.state.first * this.state.second) {
             this.setState((prevState) => {
               return {  // return으로 감싸고 prevState 활용, setState는 비동기
-              result: `${prevState.first} x ${prevState.second} = ${prevState.value} 정답`,
-              first: Math.ceil(Math.random() * 9),
-              second: Math.ceil(Math.random() * 9),
-              value: '',
+                result: `${prevState.first} x ${prevState.second} = ${prevState.value} 정답`,
+                first: Math.ceil(Math.random() * 9),
+                second: Math.ceil(Math.random() * 9),
+                value: '',
               };  
             });
           } else {

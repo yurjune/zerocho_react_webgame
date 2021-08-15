@@ -6,7 +6,7 @@ const GuGuDan = () => {
   const [second, setSecond] = useState(Math.ceil(Math.random() * 9));
   const [value, setValue] = useState('');
   const [result, setResult] = useState('');
-  const inputRef = useRef(null);  // DOM에 접근
+  const inputRef = useRef(null);
 
   const onChangeInput = (e) => {
     setValue(e.target.value);

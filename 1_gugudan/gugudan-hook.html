@@ -14,7 +14,7 @@
         const [second, setSecond] = React.useState(Math.ceil(Math.random() * 9));
         const [value, setValue] = React.useState('');
         const [result, setResult] = React.useState('');
-        const inputRef = React.useRef(null);  // DOM에 접근
+        const inputRef = React.useRef(null);
 
         const onChangeInput = (e) => {
           setValue(e.target.value);
@@ -23,7 +23,7 @@
         const onSubmitForm = (e) => {
           e.preventDefault();
           if (parseInt(value) === first * second) {
-            setResult(`${first} x ${second} = ${value} 정답!`); // prevResult 사용법?
+            setResult(`${first} x ${second} = ${value} 정답!`);
             setFirst(Math.ceil(Math.random() * 9));
             setSecond(Math.ceil(Math.random() * 9));
             setValue('');

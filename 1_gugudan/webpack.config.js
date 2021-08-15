@@ -1,5 +1,5 @@
 const path = require('path');
-const RefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+// const RefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
 module.exports = {
   mode: 'development',
@@ -26,13 +26,13 @@ module.exports = {
           '@babel/preset-react'
         ],
         plugins: [
-          'react-refresh/babel',
+          // 'react-refresh/babel', // 개발용
         ],
       },
     }],
   },
   plugins: [
-    new RefreshWebpackPlugin(),
+    // new RefreshWebpackPlugin(),  // 개발용
   ],
   output: {
     path: path.join(__dirname, 'dist'),

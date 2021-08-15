@@ -24,7 +24,7 @@
           e.preventDefault();
           if (parseInt(this.state.value) === this.state.first * this.state.second) {
             this.setState((prevState) => {
-              return {  // return으로 감싸고 prevState 활용, setState는 비동기
+              return {
                 result: `${prevState.first} x ${prevState.second} = ${prevState.value} 정답`,
                 first: Math.ceil(Math.random() * 9),
                 second: Math.ceil(Math.random() * 9),
@@ -37,7 +37,7 @@
               value: '',
             });
           }
-          this.input.focus(); // input의 ref와 관련
+          this.input.focus();
         };
 
         onChange = (e) => {
@@ -46,7 +46,7 @@
 
         input;
         onRefInput = (ref) => {
-          this.input = ref; // this.input은 input의 DOM에 접근하는 것
+          this.input = ref;
         }
 
         render() {
@@ -64,7 +64,7 @@
       }
     </script>
     <script type="text/babel">
-      ReactDOM.render(<div><GuGuDan /><GuGuDan /><GuGuDan /></div>, document.querySelector("#root"));
+      ReactDOM.render(<div><GuGuDan /><GuGuDan /></div>, document.querySelector("#root"));
     </script>
   </body>
 </html>

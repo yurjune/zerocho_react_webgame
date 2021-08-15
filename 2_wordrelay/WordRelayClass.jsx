@@ -8,6 +8,7 @@ class WordRelay extends Component {
     result: '',
   };
 
+  // 직접 만든 메소드는 화살표 함수를 써야한다(this가 달라짐)
   onSubmitForm = (e) => {
     e.preventDefault();
     if (this.state.word[this.state.word.length - 1] === this.state.value[0]) {
@@ -37,12 +38,12 @@ class WordRelay extends Component {
   render() {
     return (
     <>
-    <div>제시어: {this.state.word}</div>
-    <form onSubmit={this.onSubmitForm}>
-      <input ref={this.onRefInput} type="text" value={this.state.value} onChange={this.onChangeInput}/>
-      <button>입력</button>
-    </form>
-    <div>{this.state.result}</div>
+      <div>제시어: {this.state.word}</div>
+      <form onSubmit={this.onSubmitForm}>
+        <input ref={this.onRefInput} type="text" value={this.state.value} onChange={this.onChangeInput}/>
+        <button>입력</button>
+      </form>
+      <div>{this.state.result}</div>
     </>
     )
   }

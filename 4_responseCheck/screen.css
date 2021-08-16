@@ -1,0 +1,14 @@
+#screen {
+  width: 300px;
+  height: 200px;
+  margin: 0 0 10px 0;
+  text-align: center;
+  user-select: none;
+}
+#screen.waiting { background-color: aqua; }
+#screen.ready { background-color: red; color: white; }
+#screen.now { background-color: greenyellow; }
+
+#btn {
+  margin: 0 10px; padding: 0 3px;
+}

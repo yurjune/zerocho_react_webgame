@@ -8,7 +8,7 @@ function getWinNumbers() {
   const shuffle = [];
   while (candidate.length > 0) {
     // candidate배열에서 랜덤하게 삭제한 요소를 shuffle배열에 push
-    shuffle.push(candidate.splice(Math.floor(Math.random() * candidate.length), 1)[0]);
+    shuffle.push(candidate.splice(Math.floor(Math.random() * candidate.length), 1));
   }
   const bonusNumber = shuffle[shuffle.length - 1];
   const winNumbers = shuffle.slice(0, 6).sort((p, c) => p - c); // return p-c는 숫자 오름차순 정렬

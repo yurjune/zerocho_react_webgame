@@ -4,7 +4,6 @@ useReducer에서 state는 비동기적으로 바뀐다.
 
 cf) setState도 비동기
 */
-
 import React, { useEffect, useReducer, useCallback } from 'react';
 import Table from './Table';
 
@@ -33,7 +32,8 @@ const reducer = (state, action) => {
         winner: action.winner,
       };
 
-    case CLICK_CELL:
+    case CLICK_CELL: {  // case문에서 변수선언시 중괄호로 묶기!
+      // 불변성 유지
       const tableData = [...state.tableData];  // 얕은 복사
       tableData[action.row] = [...tableData[action.row]];
       tableData[action.row][action.cell] = state.turn;
@@ -42,14 +42,14 @@ const reducer = (state, action) => {
         tableData,
         recentCell: [action.row, action.cell],  // 좌표를 기억
       };
-
-    case CHANGE_TURN:
+    }
+    case CHANGE_TURN: {
       return {
         ...state,
         turn: state.turn === 'O' ? 'X' : 'O',
       };
-
-    case RESET_GAME:
+    }
+    case RESET_GAME: {
       return {
         ...state,
         turn: 'O',
@@ -60,7 +60,7 @@ const reducer = (state, action) => {
         ],
         recentCell: [-1, -1]
       }
-
+    }
     default:
       return state;
   }
@@ -78,7 +78,7 @@ const TicTacToe = () => {
 
   const checkWin = () => {
     let win = false;
-    const td = tableData;
+    const td = [...tableData];
     if (td[row][0] === turn && td[row][1] === turn && td[row][2] === turn) {
       win = true;
     }

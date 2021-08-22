@@ -35,10 +35,8 @@ class Lotto extends Component {
     // winNumbers의 7개 공 중 6개가 winBalls, 1개가 bonus
     for (let i = 0; i < winNumbers.length - 1; i++) {
       this.timeouts[i] = setTimeout(() => {
-        // 아래 setState의 콜백에서 return+중괄호 생략이 동작 안한다 왜일까??
-        this.setState(prevState => {
-          return { winBalls: [...prevState.winBalls, winNumbers[i]] };
-        });
+        // return + 중괄호 생략에서 객체를 리턴하는 경우 ()로 감싸줘야한다.
+        this.setState(prevState => ({ winBalls: [...prevState.winBalls, winNumbers[i]] }));
       }, (i + 1) * 1000);
     }
     this.timeouts[6] = setTimeout(() => {

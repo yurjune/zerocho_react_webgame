@@ -1,3 +1,6 @@
+/* 
+함수형 컴포넌트는 리렌더링 될 때마다 컴포넌트 전체가 다시 실행된다.
+*/
 const React = require('react');
 const { useState, useRef } = React;
 
@@ -15,7 +18,7 @@ const GuGuDan = () => {
   const onSubmitForm = (e) => {
     e.preventDefault();
     if (parseInt(value) === first * second) {
-      setResult(`${first} x ${second} = ${value} 정답!`); // prevResult 사용법?
+      setResult(`${first} x ${second} = ${value} 정답!`);
       setFirst(Math.ceil(Math.random() * 9));
       setSecond(Math.ceil(Math.random() * 9));
       setValue('');

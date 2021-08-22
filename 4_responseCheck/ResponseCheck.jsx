@@ -34,7 +34,7 @@ const ResponseCheck = () => {
       endTime.current = new Date();
       setState('waiting');
       setMessage('클릭해서 시작하세요');
-      setResult(prevResult => {
+      setResult(prevResult => { // 중괄호 + return 생략가능
         return [...prevResult, endTime.current - startTime.current];
       });
     }

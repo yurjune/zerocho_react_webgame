@@ -14,8 +14,8 @@ class GuGuDan extends React.Component {
   onSubmit = (e) => {
     e.preventDefault();
     if (parseInt(this.state.value) === this.state.first * this.state.second) {
-      this.setState((prevState) => {
-        return {  // return으로 감싸고 prevState 활용, setState는 비동기
+      this.setState((prevState) => {  // setState는 비동기
+        return {
           result: `${prevState.first} x ${prevState.second} = ${prevState.value} 정답`,
           first: Math.ceil(Math.random() * 9),
           second: Math.ceil(Math.random() * 9),
@@ -36,7 +36,7 @@ class GuGuDan extends React.Component {
   };
 
   input;
-  onRefInput = (ref) => {
+  onRefInput = (ref) => { // 아마 이 매개변수에 주소가 들어갈 것 같다
     this.input = ref; // this.input은 input의 DOM에 접근하는 것
   }
 

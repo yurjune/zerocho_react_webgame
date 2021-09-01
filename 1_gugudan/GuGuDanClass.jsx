@@ -2,6 +2,7 @@ const React = require('react');
 
 class GuGuDan extends React.Component {
   constructor(props) {
+    // super()를 넣어줌으로 this가 초기화된다.
     super(props);
     this.state = {
       first: Math.ceil(Math.random() * 9),

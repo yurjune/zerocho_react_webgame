@@ -91,7 +91,7 @@ const reducer = (state, action) => {
       따라서 모든 칸들을 새로 만들어 준다
       */
       tableData.forEach((row, i) => {
-        tableData[i] = [...state.tableData[i]];
+        tableData[i] = [...row];
       });
       let openedCount = 0;
       const checked = []
